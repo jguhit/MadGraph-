@@ -1,4 +1,5 @@
 Specific Example: 
+
 Goal: Practice to generate a polarized particle in the transverse mode (also applies to longitudinal mode) 
 and compare it to a previously made sample to cross-check if all the installations are correct 
 
