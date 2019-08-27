@@ -146,7 +146,8 @@ alias setupATLAS='source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh'
 7. mkdir Rivet
 8. cd Rivet 
 9. Download files on the folder RivetFiles folder (uploaded in the repository) 
-10. rivet -a ATLAS_2019_I00001 --pwd fifo.hepmc (The output file is a Rivet.yoda file) 
-11. rivet-mkhtml --mc-errs -o Test Rivet.yoda
+10. rivet-buildplugin --with-root RivetATLAS_2019_I00001.so  ATLAS_2019_I00001.cc
+11. rivet -a ATLAS_2019_I00001 --pwd fifo.hepmc (The output file is a Rivet.yoda file) 
+12. rivet-mkhtml --mc-errs -o Test Rivet.yoda
  
 
