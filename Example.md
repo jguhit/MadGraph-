@@ -35,5 +35,5 @@ Additional Comments: README.md file talks about how to install the programs and 
 23. Download files on the folder Rivet_Analysis_2 folder (uploaded in the repository) 
 24. rivet -a ATLAS_2019_I00001 --pwd fifo.hepmc
 25. rivet-mkhtml --mc-errs -o Test Rivet.yoda
-26. Compare with plots in this link: 
+26. Compare with plots in this link: http://www.hep.ucl.ac.uk/~guhitj/Test_Official/ATLAS_2019_I00001/index.html
 
