@@ -143,6 +143,10 @@ export ATLAS_LOCAL_ROOT_BASE=/cvmfs/atlas.cern.ch/repo/ATLASLocalRootBase
 alias setupATLAS='source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh'
 5. asetup 21.6.6,AthGeneration
 6. source setupRivet.sh
-7. rivet -a ATLAS_2019_I00001 --pwd fifo.hepmc 
-8. The output file is a Rivet.yoda file 
+7. mkdir Rivet
+8. cd Rivet 
+9. Download files on the folder Rivet_Analysis_2 folder (uploaded in the repository) 
+10. rivet -a ATLAS_2019_I00001 --pwd fifo.hepmc (The output file is a Rivet.yoda file) 
+11. rivet-mkhtml --mc-errs -o Test Rivet.yoda
+ 
 
