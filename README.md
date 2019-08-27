@@ -10,6 +10,27 @@ I. Installing MG5_aMC_2.7.0 (Polarized Particles)
 4. Type ./bin/mg5_aMC (MadGraph Prompt) 
 * or to automate 4. you could create an alias in your .bashrc: 
 alias Mad_Graph_pol='<Directory>/MG5_aMC_pol/bin/mg5_aMC'
+5. After launching madgraph type the following: 
+  - install lhapdf6 (for systematics) 
+  - install pythia-pgs 
+  - install pythia8 
+6. Type 'exit' to exit the program   
+7. In your .bashrc or .bash_profile, add the following lines: 
+  
+------------------------------------------------------------------------------------------------------------------------------
+export PYTHIA8=path_to_PYTHIA8_installation
+export LD_LIBRARY_PATH=$HOME/<Directory>/MG5_aMC_pol/HEPTools/hepmc/HepMC_install/lib:$LD_LIBRARY_PATH
+export PATH=$PATH:/<Directory>/MG5_aMC_v2_6_6/HEPTools/lhapdf6/bin
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/lib:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/include
+
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/include:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/lib:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6
+
+PYTHONPATH="/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/include:/lustre/umt3/user/guhitj/New/MG5_aMC_pol/HEPTools/lhapdf6/lib:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/bin:$PYTHONPATH"
+
+export PYTHONPATH  
+
+------------------------------------------------------------------------------------------------------------------------------
 
 II. Installing MadGraph5_v1.5.14 (Decay Package) 
 1. cp /home/guhitj/bsmxsec3/Madgraph/MadGraph5_v1.5.14.tar
@@ -27,7 +48,6 @@ This step creates an executable called "decay"
 or alias mad_decay='<Directory>/MadGraph5_v1_5_14/DECAY/decay'
 
 III. 
-
 RECIPE FOR GENERATING POLARIZED PARTICLES  
 Part 1: Generating the different polarization modes 
 1. Type MadGraph Prompt for version installed in I 
@@ -50,10 +70,10 @@ If you want to create just a single run, then proceed to 6.
   
 Part 2: Decaying Polarized Particles 
 1. In your output folder directory, cd /Events/run_01 (or the appropriate run folder) 
-2. Unzip the Les Houches Event Files by gunzip unweighted_events.lhe.gz
+2. Type 'gunzip unweighted_events.lhe.gz' to unzip the Les Houches Event Files 
 3. You should have an output called unweighted_events.lhe
 (you could choose to rename the .lhe file to something more specific if generating more than one .lhe file)
-4. Execute the decay package, Type mad_decay or . /<Directory>/DECAY/decay
+4. Execute the decay package, Type mad_decay or ./<Directory>/DECAY/decay
 5. You are given a prompt to choose an "Input run mode", to decay events in the file, Type 1
 6. Then you are asked the name of the event file to decay, Type unweighted_events.lhe (or the appropriate name of your .lhe file) 
 7. Type your desired output .lhe filename, Type <output.lhe> 
@@ -70,16 +90,45 @@ Installing HepMC
 4. Type 'mkdir HepMC_build HepMC_install'
 5. Type 'cd HepMC_build'
 6 ../HepMC-2.06.09/configure -prefix=<Directory>/hepmc/HepMC_install -with-momentum=GEV -with-length=MM
-7. Now 'make'
+7. Now type 'make'
 8. Do 'make check'
 9. Do 'make install'
 10. If everything goes smooth, then done!
+  
+  To continue with part 2, the following .h files have to be modified 
+  - GenEvent.h
+  - GenVertex.h
+  - GenParticle.h
+  - SimpleVector.h
+  - Polarization.h
+  - IO-GenEvent.h
+  - IO-BaseClass.h
+  
+  When opening these .h file, change the "include" lines to the correct directory. For example, 
+  change
+  #include "/home/HepMC-2.06.09/HepMC/GenVertex.h" 
+  to 
+  #include "/<directory>/hepmc/HepMC-2.06.09/HepMC/GenVertex.h"
+
+  These files are located in the following directories: (you must modify both files in these directories) 
+  - ../hepmc/HepMC-2.06.09/HepMC 
+  - ../hepmc/HepMC-2.06.09/include/HepMC
 
 Part 2: Installing the lhef to hepmc converter  
 1. Make a directory lhef2hepmc, Type mkdir lhef2hepmc
 2. cd lhef2hepmc 
 3. hg clone https://phab.hepforge.org/source/rivetcontribhg/browse/default/lhef2hepmc/
 You should have four files in the directory: ChangeLog, Makefile, lhef2hepmc.cc, and ttbar.lhe
+if hg command not found, instructions for installing hg (if working proceed to step 4)
+  Part 2.5: Installing Mercurial 
+  1. Download source code at https://www.mercurial-scm.org/downloads (download the Mercurial 5.1 source release) 
+  2. gunzip mercurial-5.1.tar.gz
+  3. tar -xvf mercurial-5.1.tar
+  4. cd mercurial-5.1
+  5. make local 
+  6. check if working by ./hg --version 
+  7. Leave directory and go back to lhef2hepmc directory and type ./mercurial-5.1/hg clone https://phab.hepforge.org/source/rivetcontribhg/browse/default/lhef2hepmc/
+    
 4. cd ../lhef2hepmc/ 
 5. Type make HEPMC_PREFIX=/home/HepMC-2.06.09/
 6. This should create an executable called "lhef2hepmc"
@@ -97,5 +146,3 @@ alias setupATLAS='source ${ATLAS_LOCAL_ROOT_BASE}/user/atlasLocalSetup.sh'
 7. rivet -a ATLAS_2019_I00001 --pwd fifo.hepmc 
 8. The output file is a Rivet.yoda file 
 
-
-SPECIFIC EXAMPLE: 
