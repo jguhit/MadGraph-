@@ -3,6 +3,8 @@ Using MadGraph for generating polarized particles
 
 INSTALLATIONS 
 
+All MadGraph tar files can be downloaded in this link: https://drive.google.com/drive/folders/1Rj31e2HTlckHM6OKe5Q5OLBm115o2sgZ?usp=sharing
+
 I. Installing MG5_aMC_2.7.0 (Polarized Particles) 
 1. cp /home/guhitj/bsmxsec3/Madgraph/mg5_pol.tar
 2. tar xvf mg5_pol.tar (this creates a directory with the MadGraph files and executables) 
