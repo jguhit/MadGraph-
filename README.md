@@ -61,7 +61,9 @@ If you want to create multiple runs, then
   1. ./bin/madevent 
   2. Type multi_run 5 (5 is an arbitrary number) 
   3. Proceed to 7. 
+  
 If you want to create just a single run, then proceed to 6.
+
 6. ./bin/generate_events
 7. Five (1-5) switches containing which programs are run and you could choose which one to activate, 
  e.g shower=Pythia8, activates the shower/hadronization program 
