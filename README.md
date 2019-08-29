@@ -128,6 +128,7 @@ Part 2: Installing the lhef to hepmc converter
 You should have four files in the directory: ChangeLog, Makefile, lhef2hepmc.cc, and ttbar.lhe
 
 if hg command not found, instructions for installing hg (if working proceed to step 4)
+
 ------------------------------------------------------------------------------------------------------------------------------
   Part 2.5: Installing Mercurial 
   1. Download source code at https://www.mercurial-scm.org/downloads (download the Mercurial 5.1 source release) 
