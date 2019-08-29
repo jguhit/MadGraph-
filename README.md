@@ -85,6 +85,7 @@ Part 2: Decaying Polarized Particles
 
 ANALYIS USING RIVET 
 Part 1: Converting .lhe to .hepmc file
+
 Installing HepMC 
 1. Download source code from http://lcgapp.cern.ch/project/simu/HepMC/download/
 2. Create a directory called 'hepmc' in your machine and save the above tar ball here. Type mkdir hepmc 
