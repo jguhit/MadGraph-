@@ -7,7 +7,7 @@ All MadGraph tar files can be downloaded in this link: https://drive.google.com/
 
 I. Installing MG5_aMC_2.7.0 (Polarized Particles) 
 1. cp /home/guhitj/bsmxsec3/Madgraph/mg5_pol.tar
-2. tar xvf mg5_pol.tar (this creates a directory with the MadGraph files and executables) 
+2. tar -xvf mg5_pol.tar (this creates a directory with the MadGraph files and executables) 
 3. cd MG5_aMC_pol (or the name of the created directory) 
 4. Type ./bin/mg5_aMC (MadGraph Prompt) 
 * or to automate 4. you could create an alias in your .bashrc: 
@@ -36,7 +36,7 @@ export PYTHONPATH
 
 II. Installing MadGraph5_v1.5.14 (Decay Package) 
 1. cp /home/guhitj/bsmxsec3/Madgraph/MadGraph5_v1.5.14.tar
-2. tar xvf MadGraph5_v1.5.14.tar
+2. tar -xvf MadGraph5_v1.5.14.tar
 3. cd MadGraph5_v1_5_14
 4. Type ./bin/mg5 (MadGraph Prompt)  
 or alias Mad_Graphv5='<Directory>/MadGraph5_v1_5_14/bin/mg5'
@@ -92,7 +92,7 @@ Part 1: Converting .lhe to .hepmc file
 Installing HepMC 
 1. Download source code from http://lcgapp.cern.ch/project/simu/HepMC/download/
 2. Create a directory called 'hepmc' in your machine and save the above tar ball here. Type mkdir hepmc 
-3. On a terminal, cd to this 'hepmc' folder and type 'tar -xzf HepMC-2.06.09.tar.gz'
+3. On a terminal, cd to this 'hepmc' folder and type 'tar -xvf HepMC-2.06.09.gz'
 4. Type 'mkdir HepMC_build HepMC_install'
 5. Type 'cd HepMC_build'
 6 ../HepMC-2.06.09/configure -prefix="Directory"/hepmc/HepMC_install -with-momentum=GEV -with-length=MM
@@ -124,8 +124,11 @@ Part 2: Installing the lhef to hepmc converter
 1. Make a directory lhef2hepmc, Type mkdir lhef2hepmc
 2. cd lhef2hepmc 
 3. hg clone https://phab.hepforge.org/source/rivetcontribhg/browse/default/lhef2hepmc/
+
 You should have four files in the directory: ChangeLog, Makefile, lhef2hepmc.cc, and ttbar.lhe
+
 if hg command not found, instructions for installing hg (if working proceed to step 4)
+
   Part 2.5: Installing Mercurial 
   1. Download source code at https://www.mercurial-scm.org/downloads (download the Mercurial 5.1 source release) 
   2. gunzip mercurial-5.1.tar.gz
