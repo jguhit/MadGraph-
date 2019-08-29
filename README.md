@@ -11,7 +11,7 @@ I. Installing MG5_aMC_2.7.0 (Polarized Particles)
 3. cd MG5_aMC_pol (or the name of the created directory) 
 4. Type ./bin/mg5_aMC (MadGraph Prompt) 
 * or to automate 4. you could create an alias in your .bashrc: 
-alias Mad_Graph_pol='<Directory>/MG5_aMC_pol/bin/mg5_aMC'
+alias Mad_Graph_pol='"Directory"/MG5_aMC_pol/bin/mg5_aMC'
 5. After launching madgraph type the following: 
   - install lhapdf6 (for systematics) 
   - install pythia-pgs 
@@ -39,7 +39,7 @@ II. Installing MadGraph5_v1.5.14 (Decay Package)
 2. tar -xvf MadGraph5_v1.5.14.tar
 3. cd MadGraph5_v1_5_14
 4. Type ./bin/mg5 (MadGraph Prompt)  
-or alias Mad_Graphv5='<Directory>/MadGraph5_v1_5_14/bin/mg5'
+or alias Mad_Graphv5='"Directory"/MadGraph5_v1_5_14/bin/mg5'
   
 I.II Configuring the DECAY Package 
 1. cd  MadGraph5_v1_5_14/DECAY
@@ -47,7 +47,7 @@ I.II Configuring the DECAY Package
 3. make (compile the decay code) 
 This step creates an executable called "decay" 
 4. ./decay 
-or alias mad_decay='"<Directory>"/MadGraph5_v1_5_14/DECAY/decay'
+or alias mad_decay='"Directory"/MadGraph5_v1_5_14/DECAY/decay'
 
 III. 
 RECIPE FOR GENERATING POLARIZED PARTICLES  
