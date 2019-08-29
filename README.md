@@ -55,7 +55,8 @@ Part 1: Generating the different polarization modes
 1. Type MadGraph Prompt for version installed in I 
 2. Type 'generate p p > Z{L} Z{L} j j QCD=0' , {L} is for Longitudinal and {T} is for Transverse 
 3. To save process in an output file, type 'output <output folder>' 
-4. cd <output folder>
+4. cd "output folder>"
+  
 If you want to create multiple runs, then 
   1. ./bin/madevent 
   2. Type multi_run 5 (5 is an arbitrary number) 
