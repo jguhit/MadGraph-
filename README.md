@@ -137,7 +137,8 @@ if hg command not found, instructions for installing hg (if working proceed to s
   5. make local 
   6. check if working by ./hg --version 
   7. Leave directory and go back to lhef2hepmc directory and type ./mercurial-5.1/hg clone https://phab.hepforge.org/source/rivetcontribhg/browse/default/lhef2hepmc/
-    
+ 
+ 
 4. cd ../lhef2hepmc/ 
 5. Type make HEPMC_PREFIX=/home/HepMC-2.06.09/
 6. This should create an executable called "lhef2hepmc"
