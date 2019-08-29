@@ -21,14 +21,14 @@ alias Mad_Graph_pol='<Directory>/MG5_aMC_pol/bin/mg5_aMC'
   
 ------------------------------------------------------------------------------------------------------------------------------
 export PYTHIA8=path_to_PYTHIA8_installation
-export LD_LIBRARY_PATH=$HOME/<Directory>/MG5_aMC_pol/HEPTools/hepmc/HepMC_install/lib:$LD_LIBRARY_PATH
-export PATH=$PATH:/<Directory>/MG5_aMC_v2_6_6/HEPTools/lhapdf6/bin
+export LD_LIBRARY_PATH=$HOME/"Directory"/MG5_aMC_pol/HEPTools/hepmc/HepMC_install/lib:$LD_LIBRARY_PATH
+export PATH=$PATH:/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6/bin
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/lib:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/include
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROOTSYS/lib:/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6/lib:/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6/include
 
-export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/include:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/lib:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6
+export DYLD_LIBRARY_PATH=$DYLD_LIBRARY_PATH:/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6/include:/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6/lib:/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6
 
-PYTHONPATH="/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/include:/lustre/umt3/user/guhitj/New/MG5_aMC_pol/HEPTools/lhapdf6/lib:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6:/<Directory>/MG5_aMC_pol/HEPTools/lhapdf6/bin:$PYTHONPATH"
+PYTHONPATH="/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6/include:/lustre/umt3/user/guhitj/New/MG5_aMC_pol/HEPTools/lhapdf6/lib:/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6:/"Directory"/MG5_aMC_pol/HEPTools/lhapdf6/bin:$PYTHONPATH"
 
 export PYTHONPATH  
 
@@ -47,15 +47,15 @@ I.II Configuring the DECAY Package
 3. make (compile the decay code) 
 This step creates an executable called "decay" 
 4. ./decay 
-or alias mad_decay='<Directory>/MadGraph5_v1_5_14/DECAY/decay'
+or alias mad_decay='"<Directory>"/MadGraph5_v1_5_14/DECAY/decay'
 
 III. 
 RECIPE FOR GENERATING POLARIZED PARTICLES  
 Part 1: Generating the different polarization modes 
 1. Type MadGraph Prompt for version installed in I 
 2. Type 'generate p p > Z{L} Z{L} j j QCD=0' , {L} is for Longitudinal and {T} is for Transverse 
-3. To save process in an output file, type 'output <output folder>' 
-4. cd "output folder>"
+3. To save process in an output file, type 'output "output folder"' 
+4. cd "output folder"
   
 If you want to create multiple runs, then 
   1. ./bin/madevent 
@@ -78,10 +78,10 @@ Part 2: Decaying Polarized Particles
 2. Type 'gunzip unweighted_events.lhe.gz' to unzip the Les Houches Event Files 
 3. You should have an output called unweighted_events.lhe
 (you could choose to rename the .lhe file to something more specific if generating more than one .lhe file)
-4. Execute the decay package, Type mad_decay or ./<Directory>/DECAY/decay
+4. Execute the decay package, Type mad_decay or ./"Directory"/DECAY/decay
 5. You are given a prompt to choose an "Input run mode", to decay events in the file, Type 1
 6. Then you are asked the name of the event file to decay, Type unweighted_events.lhe (or the appropriate name of your .lhe file) 
-7. Type your desired output .lhe filename, Type <output.lhe> 
+7. Type your desired output .lhe filename, Type "output.lhe"
 8. Choose the particle you are decaying, e.g Type Z 
 9. Choose the appropriate decay mode, e.g Type 4 ( z -> l+ l-)
 10. Done! 
@@ -95,7 +95,7 @@ Installing HepMC
 3. On a terminal, cd to this 'hepmc' folder and type 'tar -xzf HepMC-2.06.09.tar.gz'
 4. Type 'mkdir HepMC_build HepMC_install'
 5. Type 'cd HepMC_build'
-6 ../HepMC-2.06.09/configure -prefix=<Directory>/hepmc/HepMC_install -with-momentum=GEV -with-length=MM
+6 ../HepMC-2.06.09/configure -prefix="Directory"/hepmc/HepMC_install -with-momentum=GEV -with-length=MM
 7. Now type 'make'
 8. Do 'make check'
 9. Do 'make install'
@@ -114,7 +114,7 @@ Installing HepMC
   change
   #include "/home/HepMC-2.06.09/HepMC/GenVertex.h" 
   to 
-  #include "/<directory>/hepmc/HepMC-2.06.09/HepMC/GenVertex.h"
+  #include "/"directory"/hepmc/HepMC-2.06.09/HepMC/GenVertex.h"
 
   These files are located in the following directories: (you must modify both files in these directories) 
   - ../hepmc/HepMC-2.06.09/HepMC 
